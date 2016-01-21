@@ -1,0 +1,35 @@
+@import 'vars-mixins-colors.less';
+
+// headings
+
+// default post image
+.post img {
+	display: block;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	margin: 12px auto;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+	padding: 5px;
+	.box-shadow(2px 3px 5px rgba(0, 0, 0, 0.33));
+}
+// an image with a caption
+.caption {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	border: 1px solid rgba(0,0,0,0.25);
+	padding: 5px;
+    padding-bottom: 12px;
+    font-family: "Merriweather Sans";
+    font-size: 15px;
+    text-align: center;
+}
+// override
+.post .caption img {
+	margin: 0;
+	margin-bottom: 12px;
+	border: none;
+    padding: 0;
+}
+

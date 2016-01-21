@@ -1,3 +1,5 @@
+@import 'vars-mixins-colors.less';
+
 // general, misc
 
 html, body {
@@ -5,6 +7,7 @@ html, body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -241,6 +244,7 @@ main {
 	float: left;
 	width: 100%;
 	max-width: 613px;
+	min-height: 480px;
     margin-top: -52px;
     margin-left: 12px;
     padding: 5%;
@@ -303,8 +307,34 @@ main p {
 	opacity: 1;
 
 	&:hover {
-		opacity: 0.67;
+		opacity: 0.667;
 	}
+}
+
+// post
+
+@import 'post.less';
+
+// footer
+
+footer {
+	clear: both; // not sure why this works but it does
+	max-width: 613px;
+	margin-left: auto;
+	padding: 2%;
+}
+.logo {
+	display: block;
+	height: 100%;
+	width: auto;
+	margin: 0 auto;
+	padding-top: 1em;
+	opacity: 0.333;
+}
+.copyright {
+	font-family: "Merriweather Sans";
+	text-align: center;
+	color: #444;
 }
 
 // media queries
@@ -321,9 +351,12 @@ main p {
 		margin-top: 2%;
 		width: 100%;
 	}
+	.heading,
+	.subheading {
+		text-align: center;
+	}
 	header .heading, header .subheading {
 		float: none;
-		text-align: center;
 	}
 	header .heading {
 		font-size: 42px;
@@ -357,6 +390,11 @@ main p {
 		float: none;
 		max-width: none;
 		margin: 0;
+	}
+
+	footer {
+		max-width: none;
+		margin: auto;
 	}
 }
 @media (max-width: 449px) {

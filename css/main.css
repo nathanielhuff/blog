@@ -4,6 +4,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -224,6 +225,7 @@ main {
   float: left;
   width: 100%;
   max-width: 613px;
+  min-height: 480px;
   margin-top: -52px;
   margin-left: 12px;
   padding: 5%;
@@ -287,7 +289,55 @@ main p {
   opacity: 1;
 }
 .read-more:hover {
-  opacity: 0.67;
+  opacity: 0.667;
+}
+.post img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 12px auto;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 5px;
+  -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.33);
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.33);
+}
+.caption {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 5px;
+  padding-bottom: 12px;
+  font-family: "Merriweather Sans";
+  font-size: 15px;
+  text-align: center;
+}
+.post .caption img {
+  margin: 0;
+  margin-bottom: 12px;
+  border: none;
+  padding: 0;
+}
+footer {
+  clear: both;
+  max-width: 613px;
+  margin-left: auto;
+  padding: 2%;
+}
+.logo {
+  display: block;
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  padding-top: 1em;
+  opacity: 0.333;
+}
+.copyright {
+  font-family: "Merriweather Sans";
+  text-align: center;
+  color: #444;
 }
 @media (max-width: 749px) {
   header .bar {
@@ -302,10 +352,13 @@ main p {
     margin-top: 2%;
     width: 100%;
   }
+  .heading,
+  .subheading {
+    text-align: center;
+  }
   header .heading,
   header .subheading {
     float: none;
-    text-align: center;
   }
   header .heading {
     font-size: 42px;
@@ -337,6 +390,10 @@ main p {
     float: none;
     max-width: none;
     margin: 0;
+  }
+  footer {
+    max-width: none;
+    margin: auto;
   }
 }
 @media (max-width: 449px) {
