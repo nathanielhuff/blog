@@ -1,6 +1,28 @@
 @import 'vars-mixins-colors.less';
 
+// misc
+hr {
+	border: 0;
+	height: 1px;
+	background-color: rgba(9,26,42,0.1)
+}
+
 // headings
+.post {
+	color: #091a2a;
+
+	h1,h2,h3,h4,h5,h6 {
+		color: #0d273f;
+		font-weight: 900;
+	}
+}
+
+// lists
+li + li, 
+ul li + li, 
+ol li + li {
+	margin-top: 12px;
+}
 
 // default post image
 .post img {
@@ -21,9 +43,9 @@
 	border: 1px solid rgba(0,0,0,0.25);
 	padding: 5px;
     padding-bottom: 12px;
-    font-family: "Merriweather Sans";
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
+    .box-shadow(2px 3px 5px rgba(0, 0, 0, 0.33));
 }
 // override
 .post .caption img {
@@ -31,5 +53,63 @@
 	margin-bottom: 12px;
 	border: none;
     padding: 0;
+   	.box-shadow(none);
 }
 
+// links
+.post a {
+	border-bottom: 1px dotted #2467A8;
+	padding-bottom: 2px;
+	text-decoration: none;
+	color: #2467A8;
+
+	&:hover {
+    	color: #428ed7;
+    	border-bottom: none;
+	}
+}
+
+// blockquotes
+
+blockquote {
+	position: relative; 
+	margin: 24px;
+	padding: 24px 36px;
+	font-family: 'Merriweather',serif;
+	font-size: 1.2em;
+	font-style: italic;
+	font-weight: 800;
+	text-align: justify;
+	text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.333);
+	line-height: 1.5;
+	color: white;
+	background-color: rgba(45, 129, 210, 1); //#2d81d2;
+	box-shadow: 5px 7px 7px rgba(0, 0, 0, 0.5);
+
+	&:before,
+	&:after {
+		position: absolute;
+		width: 36px;
+		height: 24px;
+		font-size: 32px;
+		text-align: center;
+	}
+
+	&:before {
+		content: '\201C';
+		left: 0;
+		top: 8px;
+	}
+	&:after {
+		content: '\201D';
+		right: 0;
+		bottom: 8px;
+	}
+}
+// Wordpress will put p tags inside blockquotes.
+blockquote p {
+	margin: 0;
+	display: inline;
+}
+
+@import 'prism.less';
