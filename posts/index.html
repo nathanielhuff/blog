@@ -36,7 +36,7 @@
 	<link rel="stylesheet" href="../css/main.css" type="text/css">
 	<link rel="stylesheet" href="../css/post.css" type="text/css">
 	<!-- Head JS -->
-	<script type="text/javascript" src="../js/prism.js"></script>
+	
     <!--[if lt IE 9 ]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -108,11 +108,13 @@
 			</ul>
 			<p>Kratos, the "Ghost of Sparta", is a fictional video game character from Sony Santa Monica's God of War series, which is loosely based on Greek mythology. Kratos first appeared in the 2005 video game God of War, which led to the development of six additional games featuring the character as the protagonist. Kratos also appears as the protagonist of the God of War comic series and novels. He has been consistently voiced by Terrence C. Carson, and Antony Del Rio voiced the character as a child in God of War: Ghost of Sparta.</p>
 			<img src="http://i.imgur.com/UIKwNYk.jpg">
+			<!-- Images with a caption need to have a min width of about 600px -->
 			<p class="caption"><img src="http://static.comicvine.com/uploads/original/7/78486/4437564-8358864999-40088.jpg">This is an image with some caption.</p>
 			<blockquote>The Hands of Death could not defeat me, the Sisters of Fate could not hold me, and you will not see the end of this day! I will have my revenge! - Kratos</blockquote>
 			<a href="#">I'm a link</a>
-			<pre>
-				<code class="language-javascript">var ng = angular.module;
+			<p>Some inline code: <code class="language-css">p { color: red; }</code></p>
+			<!-- No new lines after <pre> tag -->
+			<pre><code class="language-javascript">var ng = angular.module;
 				
 function module() {
   var hijacked = ng.apply(this, arguments);
@@ -123,8 +125,7 @@ function module() {
   return hijacked;
 }
 
-angular.module = module;</code>
-			</pre>
+angular.module = module;</code></pre>
 		</main>
 		<footer>
 			<img class="logo" src="../img/logo-100x100-grayscale.png" alt="My logo in grayscale.">
@@ -132,5 +133,6 @@ angular.module = module;</code>
 		</footer>
 	</section>
 	<!-- Body JS -->
+	<script type="text/javascript" src="../js/prism.js"></script>
 </body>
 </html>

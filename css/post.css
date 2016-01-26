@@ -1,6 +1,7 @@
 hr {
-  border: 0;
   height: 1px;
+  margin: 24px auto;
+  border: 0;
   background-color: rgba(9, 26, 42, 0.1);
 }
 .post {
@@ -25,7 +26,7 @@ ol li + li {
   width: auto;
   max-width: 100%;
   height: auto;
-  margin: 12px auto;
+  margin: 24px auto;
   border: 1px solid rgba(0, 0, 0, 0.25);
   padding: 5px;
   -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.33);
@@ -131,8 +132,9 @@ pre[class*="language-"] {
 }
 /* Code blocks */
 pre[class*="language-"] {
+  margin: 24px 0;
+  border-radius: 2px;
   padding: 1em;
-  margin: .5em 0;
   overflow: auto;
 }
 :not(pre) > code[class*="language-"],
@@ -141,8 +143,8 @@ pre[class*="language-"] {
 }
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: .1em;
-  /*border-radius: .3em;*/
+  padding: 3px 6px 6px;
+  border-radius: 2px;
 }
 .token.comment,
 .token.prolog,
