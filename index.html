@@ -17,6 +17,7 @@
     <meta property="og:description" content="The blog for Nathaniel Huff, a web developer.">
     <meta property="og:url" content="http://nathanielhuff.com/blog">
     <meta property="og:site_name" content="Nathaniel Huff &middot; Blog">
+    <meta property="og:image" content="http://nathanielhuff.com/blog/img/og-image.png">
 	<!-- Links -->
 	<link rel="canonical" href="http://nathanielhuff.com/blog">
     <link rel="shortlink" href="http://nathanielhuff.com/blog">
@@ -28,12 +29,13 @@
 	<link rel="stylesheet" href="socialfont/font.css" type="text/css">
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<!-- Head JS -->
-
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-sanitize.min.js"></script>
     <!--[if lt IE 9 ]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body data-ng-app="blog">
 	<section class="wrapper">
 		<header class="cf">
 			<a class="cutout" href="#" target="self" title="Blog Home"></a>
@@ -75,19 +77,14 @@
 				</a>
 			</div>
 		</nav>
-		<main>
-			<div class="post-preview">
-				<h1 class="heading">Years Later, A Lesson In Not Giving Up</h1>
-				<h3 class="subheading">Friday, January 1st, 2016 &middot; 12:00 AM</h3>
-				<p class="preview">Hearing my dad&#8217;s voice on the last lap still gives me chills. There&#8217;s something about my dad cheering for me in this race that gets to me like nothing else. Six years later, this video, and the memories I have of the race, motivate me like few other memories. To me, this race is special.</p>
-				<a class="read-more" href="#">Read More</a>
+		<main data-ng-controller="BlogController as blog">
+			<div class="post-preview" data-ng-repeat="p in blog.previews">
+				<h1 class="heading">{{ p.title }}</h1>
+				<h3 class="subheading">{{ p.date }} &middot; {{ p.time }}</h3>
+				<p class="preview" data-ng-bind-html="p.preview | trustAsHtml"></p>
+				<a class="read-more" href="posts/{{p.id + '/' + p.slug}}">Read More</a>
 			</div>
-			<div class="post-preview">
-				<h1 class="heading">Some Blog Post Heading</h1>
-				<h3 class="subheading">Friday, January 1st, 2016 &middot; 12:00 AM</h3>
-				<p class="preview">Nulla in velit vitae ante imperdiet consequat iaculis eu risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque malesuada nibh, sed maximus lectus rutrum quis. Nulla in velit vitae ante imperdiet consequat iaculis eu risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque malesuada nibh, sed maximus lectus rutrum quis.</p>
-				<a class="read-more" href="#">Read More</a>
-			</div>
+
 			<div class="post-preview">
 				<h1 class="heading">Some Blog Post Heading</h1>
 				<h3 class="subheading">Friday, January 1st, 2016 &middot; 12:00 AM</h3>
@@ -102,5 +99,6 @@
 		</footer>
 	</section>
 	<!-- Body JS -->
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
