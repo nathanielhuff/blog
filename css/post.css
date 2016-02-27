@@ -16,6 +16,10 @@ hr {
   color: #0d273f;
   font-weight: 900;
 }
+.post .subheading {
+  font-weight: 700;
+  color: #1b4d7e;
+}
 li + li,
 ul li + li,
 ol li + li {

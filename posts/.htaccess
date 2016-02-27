@@ -1,0 +1,6 @@
+# Rewrite post URLs
+#   Input:  18/this-is-the-post-title
+#   Output: post.php?id=18&title=this-is-the-post-title
+
+RewriteEngine on
+RewriteRule ^/?(\d+)/([a-z-]+)$ post.php?id=$1&title=$2 [L]
