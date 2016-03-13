@@ -6,7 +6,7 @@
   var appName = 'blog';
 
   angular
-    .module(appName, ['ngSanitize', 'Scope.safeApply']);
+    .module(appName, ['ngSanitize', 'Scope.safeApply', 'smoothScroll']);
 
   // services
 
@@ -121,5 +121,27 @@
   angular
     .module(appName)
     .controller('BlogController', ['AjaxService', '$document', '$filter', '$scope', BlogController]);
+
+  // directives
+
+  function anchorScroll (smoothScroll) {
+    return {
+      restrict: 'A',
+      link: function ($scope, $element, $attrs) {
+        $element.on('click', function (evt, data) {
+          evt.preventDefault();
+          var options = ($attrs.options) ? $scope.$eval($attrs.options) : {};
+          var target = document.getElementById($element.attr('href').slice(1));
+          if (target) {
+            smoothScroll(target, options);
+          }
+        });
+      }
+    };
+  }
+
+  angular
+    .module(appName)
+    .directive('anchorScroll', ['smoothScroll', anchorScroll]);
 
 })(window, window.angular);

@@ -38,6 +38,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-sanitize.min.js"></script>
 	<script type="text/javascript" src="js/scope.safeapply.js"></script>
+	<script type="text/javascript" src="js/ng-smooth-scroll.min.js"></script>
     <!--[if lt IE 9 ]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -84,7 +85,7 @@
 				</a>
 			</div>
 		</nav>
-		<main data-ng-controller="BlogController as blog" data-ng-cloak>
+		<main id="main" data-ng-controller="BlogController as blog" data-ng-cloak>
 			<div class="post-preview" data-ng-repeat="p in blog.previews">
 				<h1 class="heading">{{ p.title }}</h1>
 				<h3 class="subheading">{{ p.date }} &middot; {{ p.time }}</h3>
@@ -98,7 +99,7 @@
 				<p class="preview">Nulla in velit vitae ante imperdiet consequat iaculis eu risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque malesuada nibh, sed maximus lectus rutrum quis. Nulla in velit vitae ante imperdiet consequat iaculis eu risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque malesuada nibh, sed maximus lectus rutrum quis.</p>
 				<a class="read-more" href="#">Read More</a>
 			</div>
-			<p class="no-more">No more posts to show. <br><a href="">Back to the top</a>.</p>
+			<p class="no-more">No more posts to show. <br><a href="#main" data-anchor-scroll>Back to the top</a>.</p>
 		</main>
 		<footer>
 			<img class="logo" src="img/logo-100x100-grayscale.png" alt="My logo in grayscale.">
