@@ -78,6 +78,12 @@ else if($invalidStatus) {
     <link rel="stylesheet" href="../../socialfont/font.css" type="text/css">
     <link rel="stylesheet" href="../../css/main.css" type="text/css">
     <link rel="stylesheet" href="../../css/post.css" type="text/css">
+    <!-- Head CSS -->
+	<style>
+		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+		 	display: none !important;
+		}
+	</style>
     <!-- Head JS -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-sanitize.min.js"></script>
@@ -127,7 +133,7 @@ else if($invalidStatus) {
 				</a>
 			</div>
 		</nav>
-        <main class="post" data-ng-controller="PostController as post">
+        <main class="post" data-ng-controller="PostController as post" data-ng-cloak>
 			<!-- Post Content Here -->
 			<h1 class="heading">{{ post.post.title }}</h1>
 			<h3 class="subheading">{{ post.post.date }} &middot; {{ post.post.time }}</h3>
