@@ -67,7 +67,7 @@ else if($invalidStatus) {
     <meta property="og:description" content="<?php echo $json['excerpt']; ?>">
     <meta property="og:url" content="<?php echo "http://nathanielhuff.com/blog/posts/".$json['ID']."/".$json['slug']; ?>">
     <meta property="og:site_name" content="Nathaniel Huff &middot; <?php echo $json['title']; ?>">
-    <meta property="og:image" content="http://nathanielhuff.com/blog/img/og-edit.jpg">
+    <meta property="og:image" content="<?php echo ($json['featured_image'] && $json['featured_image']['source']) ? $json['featured_image']['source'] : 'http://nathanielhuff.com/blog/img/og-edit.jpg'; ?>">
     <!-- Links -->
     <link rel="canonical" href="<?php echo "http://nathanielhuff.com/blog/posts/".$json['ID']."/".$json['slug']; ?>">
     <!-- Font CSS -->
