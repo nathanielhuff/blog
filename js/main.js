@@ -76,16 +76,20 @@
 
   function BlogController (AjaxService, $document, $filter, $scope) {
     var _this = this;
-    var endpoint = 'http://www.nathanielhuff.com/wordpress/wp-json/';
+    var endpoint = 'http://nathanielhuff.com/wordpress/wp-json/posts';
 
+    _this.loading = true;
+    _this.error = false;
     _this.previews = [];
+    _this.noMore = false;
+
+    _this.loadMorePreviews = loadMorePreviews;
 
     function getPosts () {
       var posts;
 
-      // /posts?filter[posts_per_page]=3
       AjaxService
-        .get(endpoint + 'posts/?filter[posts_per_page]=3')
+        .get(endpoint)
         .then(function (data) {
           posts = data;
 
@@ -102,15 +106,44 @@
               title: p.title,
               date: $filter('date')(d, 'fullDate'),
               time: $filter('date')(d, 'shortTime'),
-              preview: preview
+              preview: preview,
+              shown: (i < 3) ? true : false
             });
           }
           $scope.$safeApply();
 
         },function (data) {
           // error
-          console.log(data);
+          // console.log(data);
+          _this.error = true;
+        }).finally(function () {
+          _this.loading = false;
         });
+    }
+
+    function hasMorePreviews () {
+      var hasMore = false;
+      for (var i=0,ii=_this.previews.length; i<ii; ++i) {
+        if (!_this.previews[i].shown) {
+          hasMore = true;
+          break;
+        }
+      }
+      return hasMore;
+    }
+
+    function loadMorePreviews() {
+      var limit = 3, count = 0;
+      if ( hasMorePreviews() ) {
+        for (var i=0,ii=_this.previews.length; i<ii; ++i) {
+          if ( !_this.previews[i].shown && count < limit ) {
+            _this.previews[i].shown = true;
+            ++count;
+          }
+        }
+      } else {
+        _this.noMore = true;
+      }
     }
 
     $document.ready(function () {

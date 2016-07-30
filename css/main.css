@@ -192,6 +192,39 @@ header .bar {
   width: 0;
   border-top: 10.39px solid #1f5a93;
 }
+.hex-wrap-error svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hex-wrap-error {
+  margin: 0 auto;
+  width: 200px;
+}
+.hexagon-error {
+  position: relative;
+  width: 200px;
+  height: 115.47px;
+  background-color: #c0392b;
+  margin: 57.74px 0;
+}
+.hexagon-error:before,
+.hexagon-error:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+.hexagon-error:before {
+  bottom: 100%;
+  border-bottom: 57.74px solid #c0392b;
+}
+.hexagon-error:after {
+  top: 100%;
+  width: 0;
+  border-top: 57.74px solid #c0392b;
+}
 nav {
   float: left;
   width: 83px;
@@ -352,20 +385,28 @@ main p {
 .read-more:hover {
   opacity: 0.667;
 }
-.no-more {
+.error {
+  padding-top: 5%;
   text-align: center;
 }
-.no-more a {
+.no-more,
+.load-more {
+  text-align: center;
+}
+.no-more a,
+.load-more a {
   border-bottom: 1px dotted #2467A8;
   padding-bottom: 2px;
   text-decoration: none;
   color: #2467A8;
 }
-.no-more a:hover {
+.no-more a:hover,
+.load-more a:hover {
   color: #428ed7;
   border-bottom: none;
 }
-.no-more br {
+.no-more br,
+.load-more br {
   display: none;
 }
 footer {

@@ -86,20 +86,23 @@
 			</div>
 		</nav>
 		<main id="main" data-ng-controller="BlogController as blog" data-ng-cloak>
-			<div class="post-preview" data-ng-repeat="p in blog.previews">
+			<div class="post-preview" data-ng-repeat="p in blog.previews | filter : { 'shown' : true }">
 				<h1 class="heading">{{ p.title }}</h1>
 				<h3 class="subheading">{{ p.date }} &middot; {{ p.time }}</h3>
 				<p class="preview" data-ng-bind-html="p.preview | trustAsHtml"></p>
 				<a class="read-more" href="posts/{{p.id + '/' + p.slug}}">Read More</a>
 			</div>
-
-			<div class="post-preview">
-				<h1 class="heading">Some Blog Post Heading</h1>
-				<h3 class="subheading">Friday, January 1st, 2016 &middot; 12:00 AM</h3>
-				<p class="preview">Nulla in velit vitae ante imperdiet consequat iaculis eu risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque malesuada nibh, sed maximus lectus rutrum quis. Nulla in velit vitae ante imperdiet consequat iaculis eu risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum scelerisque malesuada nibh, sed maximus lectus rutrum quis.</p>
-				<a class="read-more" href="#">Read More</a>
+			<p class="loading" data-ng-if="blog.loading">Fetching Posts...</p>
+			<p class="load-more" data-ng-if="!blog.noMore && !blog.error"><a href="javascript:;" title="Load more previews." data-ng-click="blog.loadMorePreviews()">Load more previews</a>.</p>
+			<p class="no-more" data-ng-if="blog.noMore">No more posts to show. <br><a href="#main" data-anchor-scroll>Back to the top</a>.</p>
+			<div data-ng-if="blog.error">
+				<div class="hex-wrap hex-wrap-error">
+				    <div class="hexagon hexagon-error">
+				        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><polygon fill="rgba(255,255,255,0.67)" points="55.9,68.6 61.2,4.8 36.3,4.8 41.6,68.6  "/><rect x="39.4" y="76" fill="rgba(255,255,255,0.67)" width="18.8" height="18.8"/></g></svg>
+				    </div>
+				</div>
+				<p class="error">There was an error fetching the post previews.</p>
 			</div>
-			<p class="no-more">No more posts to show. <br><a href="#main" data-anchor-scroll>Back to the top</a>.</p>
 		</main>
 		<footer>
 			<img class="logo" src="img/logo-100x100-grayscale.png" alt="My logo in grayscale.">
