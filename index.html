@@ -92,8 +92,21 @@
 				<p class="preview" data-ng-bind-html="p.preview | trustAsHtml"></p>
 				<a class="read-more" href="posts/{{p.id + '/' + p.slug}}">Read More</a>
 			</div>
-			<p class="loading" data-ng-if="blog.loading">Fetching Posts...</p>
-			<p class="load-more" data-ng-if="!blog.noMore && !blog.error"><a href="javascript:;" title="Load more previews." data-ng-click="blog.loadMorePreviews()">Load more previews</a>.</p>
+			<div class="loading" data-ng-if="blog.loading">
+				<div class="hex-loading-wrapper cf">
+					<div class="hex-wrap one">
+						<div class="hex"></div>
+					</div>
+					<div class="hex-wrap two">
+						<div class="hex"></div>
+					</div>
+					<div class="hex-wrap three">
+						<div class="hex"></div>
+					</div>
+				</div>
+				<p>Fetching Posts...</p>
+			</div>
+			<p class="load-more" data-ng-if="!blog.noMore && !blog.error && !blog.loading"><a href="javascript:;" title="Load more previews." data-ng-click="blog.loadMorePreviews()">Load more previews</a>.</p>
 			<p class="no-more" data-ng-if="blog.noMore">No more posts to show. <br><a href="#main" data-anchor-scroll>Back to the top</a>.</p>
 			<div data-ng-if="blog.error">
 				<div class="hex-wrap hex-wrap-error">

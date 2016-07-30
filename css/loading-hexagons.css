@@ -1,0 +1,106 @@
+.hex-loading-wrapper {
+  width: 225px;
+  margin: 0 auto;
+}
+.hex-loading-wrapper .hex {
+  position: relative;
+  width: 50px;
+  height: 28.87px;
+  margin: 14.43px 0;
+}
+.hex-loading-wrapper .hex:before,
+.hex-loading-wrapper .hex:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+.hex-loading-wrapper .hex:before {
+  bottom: 100%;
+  border-bottom: 14.43px solid;
+}
+.hex-loading-wrapper .hex:after {
+  top: 100%;
+  width: 0;
+  border-top: 14.43px solid;
+}
+.hex-loading-wrapper .hex-wrap {
+  float: left;
+  padding: 12px;
+  -webkit-animation: rotate-anim 2s infinite;
+  -moz-animation: rotate-anim 2s infinite;
+  -ms-animation: rotate-anim 2s infinite;
+  animation: rotate-anim 2s infinite;
+}
+.hex-loading-wrapper .hex-wrap.one .hex {
+  background-color: #164069;
+}
+.hex-loading-wrapper .hex-wrap.one .hex:before {
+  border-bottom-color: #164069;
+}
+.hex-loading-wrapper .hex-wrap.one .hex:after {
+  border-top-color: #164069;
+}
+.hex-loading-wrapper .hex-wrap.two {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -ms-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.hex-loading-wrapper .hex-wrap.two .hex {
+  background-color: #1f5a93;
+}
+.hex-loading-wrapper .hex-wrap.two .hex:before {
+  border-bottom-color: #1f5a93;
+}
+.hex-loading-wrapper .hex-wrap.two .hex:after {
+  border-top-color: #1f5a93;
+}
+.hex-loading-wrapper .hex-wrap.three {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -ms-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.hex-loading-wrapper .hex-wrap.three .hex {
+  background-color: #2d81d2;
+}
+.hex-loading-wrapper .hex-wrap.three .hex:before {
+  border-bottom-color: #2d81d2;
+}
+.hex-loading-wrapper .hex-wrap.three .hex:after {
+  border-top-color: #2d81d2;
+}
+@-webkit-keyframes rotate-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

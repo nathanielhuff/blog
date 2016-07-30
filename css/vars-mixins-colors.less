@@ -8,6 +8,18 @@
 // #164069
 // #102E4B
 
+.animation (@animation) {
+	-webkit-animation: @animation;
+	-moz-animation: @animation;
+	-ms-animation: @animation;
+	animation: @animation;
+}
+.animation-delay (@delay) {
+	-webkit-animation-delay: @delay;
+	-moz-animation-delay: @delay;
+	-ms-animation-delay: @delay;
+	animation-delay: @delay;
+}
 .box-shadow (@string) {
 	-webkit-box-shadow: @string;
 	-moz-box-shadow: @string;
