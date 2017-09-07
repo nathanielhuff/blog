@@ -13,8 +13,9 @@ hr {
 .post h4,
 .post h5,
 .post h6 {
-  color: #0d273f;
   font-weight: 900;
+  line-height: normal;
+  color: #0d273f;
 }
 .post .subheading {
   font-weight: 700;

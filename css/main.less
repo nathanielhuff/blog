@@ -18,6 +18,7 @@ body {
 h1,h2,h3,h4,h5,h6 {
 	margin: 0;
 	font-weight: normal;
+	line-height: normal;
 
 	&, .heading, .subheading {
 		font-family: "Lato", Tahoma, serif;
@@ -297,25 +298,24 @@ main {
     margin-top: -52px;
     margin-left: 12px;
     padding: 5%;
+    font-family: "Merriweather", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.618; // golden ratio
 	background-color: whitesmoke;
 }
-main .heading,
-main .subheading {
-	text-align: center;
-}
 main .heading {
+	font-size: 54px;
 	font-weight: 900;
 	color: #0d273f;
 }
 main .subheading {
+	margin-top: 10px;
+	font-size: 18px;
 	font-weight: 700;
 	color: #1b4d7e;
 }
 main p {
-	text-align: justify;
 	color: #091a2a;
-	line-height: 1.4;
-	letter-spacing: 0.5px;
 }
 
 // post previews
@@ -375,6 +375,7 @@ main p {
 	border-bottom: none;
 	padding: 12px;
 	font-family: "Lato", Tahoma, serif;
+	line-height: normal;
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -453,12 +454,15 @@ footer {
 		margin-top: 2%;
 		width: 100%;
 	}
-	.heading,
-	.subheading {
-		text-align: center;
+	main .heading {
+		font-size: 32px;
+	}
+	main .subheading {
+		font-size: 16px;
 	}
 	header .heading, header .subheading {
 		float: none;
+		text-align: center;
 	}
 	header .heading {
 		font-size: 42px;
@@ -492,6 +496,7 @@ footer {
 		float: none;
 		max-width: none;
 		margin: 0;
+		font-size: 15px;
 	}
 
 	footer {
